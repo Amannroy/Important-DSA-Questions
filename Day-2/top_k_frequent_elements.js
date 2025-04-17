@@ -39,9 +39,9 @@ function topKFrequent(nums,k){
           minHeap.shift();
        }
    }
-   return minHeap.map(pair => pair[0]);
+   return minHeap.sort().map(pair => pair[0]);
 }
-console.log(topKFrequent([1,1,1,2,2,3], 2)); // [2,1]
+console.log(topKFrequent([1,1,1,2,2,3], 2)); // [1, 2]
 
 // TC = O(nlogk)
 // TC = O(n)
