@@ -28,3 +28,6 @@ let validPath = function(n, edges, source, destination) {
     return false;
     
 };
+
+// TC = O(n^2)
+// SC = O(n^2)

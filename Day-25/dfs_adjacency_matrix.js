@@ -1,3 +1,4 @@
+// Find if path exists in graph
 let validPath = function(n, edges, source, destination) {
     let adjMatrix = Array.from({length:n}, () => Array(n).fill(0));
 
@@ -24,3 +25,6 @@ let validPath = function(n, edges, source, destination) {
     }
     return dfs(source);
 };
+
+// TC = O(n^2)
+// SC = O(n^2)
