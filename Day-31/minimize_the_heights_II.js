@@ -14,7 +14,7 @@ function getMinDiff(arr, k){
    }
    return diff;
 }
-console.log(getMinDiff([1, 5, 8, 10], 2));
+console.log(getMinDiff([1, 5, 8, 10], 2)); // 5
 
 
 // TC = O(n log n) + O(n)
