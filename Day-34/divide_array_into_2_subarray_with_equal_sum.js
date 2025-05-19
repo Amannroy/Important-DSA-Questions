@@ -42,4 +42,8 @@ function divideArraySubarray(arr){
    }
    return 0;
 }
-console.log(divideArraySubarray([3,4,-2,5,8,20,-10,8]));
+console.log(divideArraySubarray([3,4,-2,5,8,20,-10,8])); // 1
+
+
+// TC = O(n)
+// SC = O(1)
