@@ -43,4 +43,7 @@ function subarraySum(nums, k){
      }
      return count;
 }
-console.log(subarraySum([1,1,1], 2));
+console.log(subarraySum([1,1,1], 2)); // 2
+
+// TC = O(n)
+// SC = O(n)
