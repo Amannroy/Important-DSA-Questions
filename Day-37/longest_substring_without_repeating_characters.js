@@ -18,4 +18,7 @@ function lengthOfLongestSubstring(s){
     }
     return maxLength;
 }
-console.log(lengthOfLongestSubstring("abcabcbb"));
+console.log(lengthOfLongestSubstring("abcabcbb")); // 3
+
+// TC = O(n)
+// SC = O(n)
