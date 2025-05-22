@@ -14,4 +14,7 @@ function findMaxAverage(nums, k){
     }
     return maxSum / k;
 }
-console.log(findMaxAverage([1,12,-5,-6,50,3], 4));
+console.log(findMaxAverage([1,12,-5,-6,50,3], 4)); // 12.75
+
+// TC = O(n)
+// SC = O(n)
