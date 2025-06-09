@@ -13,3 +13,6 @@ let convertToTitle = function(columnNumber) {
     }
     return result.reverse().join("");
 };
+
+// TC = O(logn)
+// SC = O(1)
