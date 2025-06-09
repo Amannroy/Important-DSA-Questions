@@ -15,4 +15,4 @@ let convertToTitle = function(columnNumber) {
 };
 
 // TC = O(logn)
-// SC = O(1)
+// SC = O(n)

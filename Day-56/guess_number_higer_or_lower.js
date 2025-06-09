@@ -16,3 +16,6 @@ let guessNumber = function(n) {
 
     }
 };
+
+//TC = O(logn)
+//SC = O(1)

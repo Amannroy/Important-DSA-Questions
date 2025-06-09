@@ -16,3 +16,6 @@ let searchInsert = function(nums, target) {
    }
    return res;
 };
+
+// TC = O(logn)
+// SC = O(1)
