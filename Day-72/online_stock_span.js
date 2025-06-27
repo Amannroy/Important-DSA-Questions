@@ -24,5 +24,6 @@ StockSpanner.prototype.next = function(price) {
     return span;
 };
 
+// Time and Space
 // TC = O(n)
 // SC = O(n)
