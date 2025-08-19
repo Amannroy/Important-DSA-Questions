@@ -1,0 +1,78 @@
+let findClosestElements = function(arr, k, x) {
+    class MaxHeap {
+        constructor() { this.heap = []; }
+
+        parent(i) { return Math.floor((i - 1) / 2); }
+        left(i) { return 2 * i + 1; }
+        right(i) { return 2 * i + 2; }
+
+        swap(i, j) { [this.heap[i], this.heap[j]] = [this.heap[j], this.heap[i]]; }
+
+        // custom compare: distance, then value
+        isGreater(a, b) {
+            if (a[0] !== b[0]) return a[0] > b[0];
+            return a[1] > b[1]; // larger value considered "greater"
+        }
+
+        push(val) {
+            this.heap.push(val);
+            this.bubbleUp();
+        }
+
+        bubbleUp() {
+            let index = this.heap.length - 1;
+            while (index > 0) {
+                let parent = this.parent(index);
+                if (this.isGreater(this.heap[index], this.heap[parent])) {
+                    this.swap(index, parent);
+                    index = parent;
+                } else break;
+            }
+        }
+
+        pop() {
+            if (this.size() === 1) return this.heap.pop();
+            let top = this.heap[0];
+            this.heap[0] = this.heap.pop();
+            this.bubbleDown(0);
+            return top;
+        }
+
+        bubbleDown(index) {
+            let largest = index;
+            let l = this.left(index), r = this.right(index);
+
+            if (l < this.size() && this.isGreater(this.heap[l], this.heap[largest])) {
+                largest = l;
+            }
+            if (r < this.size() && this.isGreater(this.heap[r], this.heap[largest])) {
+                largest = r;
+            }
+            if (largest !== index) {
+                this.swap(index, largest);
+                this.bubbleDown(largest);
+            }
+        }
+
+        size() { return this.heap.length; }
+    }
+
+    // Max Heap to store [distance, value]
+    let maxHeap = new MaxHeap();
+
+    for (let num of arr) {
+        let distance = Math.abs(num - x);
+        maxHeap.push([distance, num]);
+
+        if (maxHeap.size() > k) {
+            maxHeap.pop();
+        }
+    }
+
+    let result = [];
+    while (maxHeap.size() > 0) {
+        result.push(maxHeap.pop()[1]);
+    }
+
+    return result.sort((a, b) => a - b);
+};
